@@ -1,0 +1,27 @@
+@import "./angularMaterial.scss";
+@import "./variables.scss";
+
+.top-nav-bar {
+	background: $attentive-blue;
+	color: $foreground-nav;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+
+.nav-bar {
+	&.mat-toolbar {
+		background: $attentive-blue;
+		color: $foreground-nav;
+	}
+}
+
+.modules-body {
+	position: absolute;
+	top: 56px;
+	width: 100%;
+	left: 0;
+	right: 0;
+}
