@@ -1,6 +1,7 @@
 <mat-toolbar class="nav-bar">
-    <button mat-button routerLink="{{item.routerLink}}" *ngFor="let item of items">
-        <span><i class="{{item.icon}}"></i>{{item.label}}</span>
-    </button>
-    <span fxFlex="1 1 auto"></span>
+    <div class="centered-elements">
+        <button mat-button routerLink="{{item.routerLink}}" *ngFor="let item of items">
+            <span><i class="{{item.icon}}"></i>{{item.label}}</span>
+        </button>
+    </div>
 </mat-toolbar> 

@@ -1,0 +1,47 @@
+:host {
+	display: block;
+}
+
+.viewer-wrapper {
+	border: 1px solid rgba(0, 0, 0, 0.03);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+	margin: 4px;
+	h3 {
+		margin-top: 10px;
+	}
+}
+
+.viewer-title {
+	color: rgba(0, 0, 0, 0.54);
+	background: rgba(0, 0, 0, 0.03);
+	align-content: center;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 8px 20px;
+}
+
+.viewer-title-spacer {
+	flex: 1 1 auto;
+}
+
+.viewer-source-copy {
+	position: absolute;
+	top: 8px;
+	display: none;
+}
+
+.viewer-source-wrapper:hover {
+	.viewer-source-copy {
+		display: inline-block;
+	}
+}
+
+.viewer-source {
+	padding: 0 30px 10px 30px;
+	min-height: 150px;
+}
+
+.viewer-body {
+	padding: 30px;
+}
