@@ -51,8 +51,13 @@ body {
 .container {
 	display: flex;
 	height: 100%;
+	padding: 10px;
 }
 
 .image-box {
 	margin-left: 100px;
+}
+
+.hideImg {
+	display: none
 }

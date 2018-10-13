@@ -1,0 +1,16 @@
+<group-viewer title="Random Cat">
+  <div *ngIf="randomCat">
+      <div class="centered-elements" *ngIf="loadingImg | async">
+          <mat-spinner [diameter]="48"></mat-spinner>
+      </div>
+      <div [ngClass]="(loadingImg | async) ? 'hideImg': ''" class="container">
+          <img [src]="randomCat" height="300" width="300" (load)="onImgLoaded()">
+      </div>
+  </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="getRandomCat()">Get Random Cat</button>
+    </div>
+  </group-viewer>
+
+
+
