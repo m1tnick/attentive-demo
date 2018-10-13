@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DogsService } from './services/dogs.service';
 import { DogBreedVM } from './model/DogBreedVM';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Component({
@@ -12,8 +12,8 @@ import { take } from 'rxjs/operators';
 export class DogComponent implements OnInit {
 
   dogBreeds$: Observable<DogBreedVM[]>;
+  imageURL$: Observable<URL>;
   breedName: string;
-  imageUrl: URL;
 
   constructor(private dogsService: DogsService) { }
 
@@ -23,10 +23,7 @@ export class DogComponent implements OnInit {
 
   onBreedSelected(event: string) {
     this.breedName = event;
-    this.imageUrl = null;
-    this.dogsService.getBreedImage(event).pipe(take(1)).subscribe((url: URL) =>{
-      this.imageUrl = url;
-    });
+    this.imageURL$ = this.dogsService.getBreedImage(event);
   }
 
 }

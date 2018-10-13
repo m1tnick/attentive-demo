@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { RouterModule } from '@angular/router';
 import { GroupViewerComponent } from "./group-viewer/group-viewer.component";
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
          MatButtonModule,
          MatFormFieldModule,
          MatSelectModule,
+         MatProgressSpinnerModule,
          MatCardModule,
          RouterModule,
          ReactiveFormsModule],
@@ -28,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatToolbarModule, 
         MatButtonModule, 
         MatFormFieldModule,
+        MatProgressSpinnerModule,
         MatSelectModule,
         MatCardModule,
         RouterModule,

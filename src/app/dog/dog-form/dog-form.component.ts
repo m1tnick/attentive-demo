@@ -27,7 +27,6 @@ export class DogFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.dogForm.value);
     this.breedSelected.emit(this.dogForm.value.breed);
   }
 
