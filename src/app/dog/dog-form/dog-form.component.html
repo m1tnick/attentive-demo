@@ -1,0 +1,14 @@
+        <form [formGroup]="dogForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-select placeholder="Select the breed list" formControlName="breed" >
+                    <mat-option *ngFor="let dogBreed of dogBreeds" [value]="dogBreed.breed">
+                    {{ dogBreed.breed }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>    
+            <div>
+                <button mat-raised-button color="primary" 
+                type="submit" [disabled]="!dogForm.valid">Get Dog Image</button>
+            </div>
+        </form>
+
