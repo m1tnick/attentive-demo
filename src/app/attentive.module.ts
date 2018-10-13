@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { AttentiveRoutingModule } from './attentive-routing.module';
 import { DogModule } from './dog/dog.module';
 import { CatModule } from './cat/cat.module';
+import { ErrorsModule } from './shared/errors/errors.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CatModule } from './cat/cat.module';
     AttentiveRoutingModule,
     SharedModule,
     DogModule,
-    CatModule
+    CatModule,
+    ErrorsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AttentiveComponent]

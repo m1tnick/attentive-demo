@@ -1,0 +1,22 @@
+<div *ngIf="displayError" class="error-overlay">
+    <div class="error-modal error-box">
+        <div class="error-icon">
+                <i class="fa fa-exclamation-triangle"></i>
+        </div>
+
+        <div class="error-title">
+                <span [innerHTML]="error.title"></span>
+        </div>
+        <div class="error-messages">
+                <strong><p>{{error.message}}</p><p *ngIf="error.code">(code: {{error.code}})</p></strong>
+        </div>
+        <div class="error-button">
+            <button mat-stroked-button (click)="closeError()"><strong>{{error.buttonText}}</strong></button>
+        </div>
+        <div class="error-support" *ngIf="error.helpText">
+            <div>
+                <span [innerHTML]="error.helpText"></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -27,7 +27,6 @@ export class CatComponent implements OnInit {
 
   onImgLoaded() {
     this.loadingImg.next(false);
-    console.log("POP")
   }
 
 }

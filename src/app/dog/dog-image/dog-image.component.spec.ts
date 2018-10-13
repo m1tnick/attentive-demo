@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DogImageComponent } from './dog-image.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('DogImageComponent', () => {
   let component: DogImageComponent;
@@ -8,6 +9,7 @@ describe('DogImageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [SharedModule],
       declarations: [ DogImageComponent ]
     })
     .compileComponents();

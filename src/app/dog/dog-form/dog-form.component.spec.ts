@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DogFormComponent } from './dog-form.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('DogFormComponent', () => {
   let component: DogFormComponent;
@@ -8,6 +9,7 @@ describe('DogFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [SharedModule],
       declarations: [ DogFormComponent ]
     })
     .compileComponents();
