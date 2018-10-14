@@ -1,27 +1,42 @@
 # AttentiveDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This demo consists of three parts:
 
-## Development server
+1.  Home - A simple land page
+2.  Dogs - Made with two components. You can select one dog breed and see images of it, or you can use PokeDoge to catch dogs and name them. In future versions of the app you will be able to train them.
+3.  Cats - Just random images of cats.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How to run the demo
 
-## Code scaffolding
+The demo was develop in Angular and NodeJs. In order to run the application you need to have nodeJs installed along with npm (https://nodejs.org/en/). Having NodeJs installed you have can proceed with the dependencies:
+1.  Go to angular folder and run "npm install"
+2.  Go to nodeserver folder and run "npm install"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+With the dependencies installed start the nodeserver and then angular:
+1.  Go to noderserver and run "node server.js";
+2.  Go to angular and run "ng serve";
 
-## Build
+Finally go to your favorite browser and navigate to `http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Development details
 
-## Running unit tests
+Branch "angular-structure" contains a simple web-application. It focus only in angular 6 and in the bellow functionalities:
+1.  Routing
+2.  Smart components and presentational components
+3.  Structuring application with shared and core modules, along with services.
+4.  Material theme and basic design
+5.  Displaying spinner while performing async operations.
+6.  Global error handling and service to show a modal to user.
+7.  REST Apis (only get)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Branch "backend-server" improves on previous branch by moving the handling of the rest apis to a nodejs server:
+1.  Angular refactored to connect to nodejs server
+2.  NodeJs with express
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Branch "full-application" improves on previous branch by implementing all CRUD operations in nodejs along with persitent with firebase:
+1.  Creating more components on Angular to fully use CRUD operations
+2.  Refactoring Angular to use lazy loading of modules
+3.  Using promise-chain in NodeJs to combine requests information
+4.  Using javascript modules to improve project organization 
+5.  Connecting to firebase 
+6.  Saving, Reading, Updating and Deleting data in firebase
