@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { DogBreedVM } from '../model/DogBreedVM';
 
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-const dogListUrl = ' https://dog.ceo/api/breeds/list/all';
-const breedImageUrl = 'https://dog.ceo/api/breed/:breedName/images/random';
-
+// const dogListUrl = ' https://dog.ceo/api/breeds/list/all';
+// const breedImageUrl = 'https://dog.ceo/api/breed/:breedName/images/random';
+const dogListUrl = 'http://localhost:8000/dogs';
+const breedImageUrl = 'http://localhost:8000/dogs/:breedName';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,8 @@ export class DogsService {
 
   getBreedImage(breedName: string): Observable<any> {
     const resolvedUrl = breedImageUrl.replace(":breedName", breedName);
+    //let params = new HttpParams().set("breedName",breedName);
+
     return this.http.get(resolvedUrl).pipe(
       map((data: any) => new URL(data.message))
     );

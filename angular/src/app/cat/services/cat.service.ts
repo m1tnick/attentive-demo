@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const catRandomUrl = 'https://aws.random.cat/meow';
+//const catRandomUrl = 'https://aws.random.cat/meow';
+const catRandomUrl = 'http://localhost:8000/cats';
 
 @Injectable({
   providedIn: 'root'

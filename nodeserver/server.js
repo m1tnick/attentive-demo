@@ -1,27 +1,25 @@
 var express = require('express'),
       app = express(),
-      bodyParser = require("body-parser");
-
-      var request = require('request');
+      bodyParser = require("body-parser"),
+      cors = require("cors");
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-var dogRoutes = require("./routes/dog.js"),
+// Allow cors
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
+
+var dogRoutes = require("./routes/dog"),
     catRoutes = require("./routes/cat");
 
+app.use('/dogs', dogRoutes);
+app.use('/cats', catRoutes);
 
-// app.get("/", function(req, res) {
-//     res.send("HELLO")
-// });
-
-
-app.get("/", function(req, res) {
-    request('https://aws.random.cat/meow', function (error, response, body) {
-      res.send(body);
-    });
-});
-
-//app.use("/", dogRoutes);
 
 app.listen(8000, () => {
     console.log('Server started!');
