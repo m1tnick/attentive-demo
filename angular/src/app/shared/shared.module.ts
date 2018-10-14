@@ -6,6 +6,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { RouterModule } from '@angular/router';
@@ -22,6 +24,7 @@ import { ReactiveFormsModule } from "@angular/forms";
          MatProgressSpinnerModule,
          MatCardModule,
          MatTabsModule,
+         MatInputModule,
          RouterModule,
          ReactiveFormsModule],
     declarations:[GroupViewerComponent],
@@ -34,6 +37,7 @@ import { ReactiveFormsModule } from "@angular/forms";
         MatSelectModule,
         MatCardModule,
         MatTabsModule,
+        MatInputModule,
         RouterModule,
         ReactiveFormsModule,
         GroupViewerComponent

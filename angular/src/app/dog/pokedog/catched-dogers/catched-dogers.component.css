@@ -1,0 +1,50 @@
+.flex-container {
+  display: flex;
+  overflow: hidden;
+}
+.flex-container > * {
+  flex: 0 0 auto;
+  overflow: scroll;
+}
+.stretchy {
+  flex: 1 1 auto;
+}
+.column {
+  flex-direction: column;
+}
+html,
+body,
+.full-screen {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+.full-screen {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+.full-screen > * {
+  flex: 0 0 auto;
+  overflow: scroll;
+}
+
+.full-screen > .main {
+  flex: 1 1 auto;
+  display: flex;
+  overflow: hidden;
+}
+.full-screen > .main > * {
+  flex: 0 0 auto;
+  overflow: scroll;
+}
+.full-screen > .main > .left,
+.full-screen > .main > .right {
+  width: 200px;
+  background: #fff;
+}
+.full-screen > .main > .middle {
+  flex: 1 1 auto;
+  margin-left: 50px;
+}

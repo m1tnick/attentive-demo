@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DogFormComponent } from './dog-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('DogFormComponent', () => {
   let component: DogFormComponent;
@@ -9,7 +10,7 @@ describe('DogFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
+      imports: [SharedModule, BrowserAnimationsModule],
       declarations: [ DogFormComponent ]
     })
     .compileComponents();

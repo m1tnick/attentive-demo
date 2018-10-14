@@ -5,10 +5,22 @@ module.exports = {
     saveDoger: function(doger) {
         firebase.database().ref('doger/' + uuidv1()).set({
             breed: doger.breed,
-            givenName: '',
+            name: '',
             imageUrl : doger.imageUrl
         }); 
     },
+
+    updateDoger: function(id, doger) {
+        firebase.database().ref('doger/' + id).set({
+            breed: doger.breed,
+            name: doger.name,
+            imageUrl : doger.imageUrl
+        }); 
+    },   
+    
+    deleteDoger: function(id) {
+        firebase.database().ref('doger/' + id).set(null); 
+    },    
 
     readAllDogers: function(res) {
         var dogers = firebase.database().ref('doger/');
@@ -17,8 +29,3 @@ module.exports = {
           });
     }    
   };
-
-//   var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-// starCountRef.on('value', function(snapshot) {
-//   updateStarCount(postElement, snapshot.val());
-// });

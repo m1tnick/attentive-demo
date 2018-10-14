@@ -28,8 +28,31 @@ export class PokeDogerService {
   }
 
   readAllDoger(): Observable<DogerVM[]> {
-    return this.http.get<DogerVM[]>(dogerUrl);
+    return this.http.get<DogerVM[]>(dogerUrl).pipe(
+      map((data: any) => this.toDogerVM(data)));;
+  }
+
+  updateDoger(doger: DogerVM): Observable<DogerVM> {
+      return this.http.put<DogerVM>(dogerUrl + doger.id, doger, httpOptions);
+  }
+
+  deleteDoger(id: number) {
+    return this.http.delete(dogerUrl + id, {responseType: 'text'});
   }
   
+  private toDogerVM(data) {
+    var dogBreeds: DogerVM[] = new Array<DogerVM>();
+
+    for (let key in data) {
+      let dog = new DogerVM();
+      dog.id = key;
+      dog.breed = data[key].breed;
+      dog.name = data[key].name;
+      dog.imageUrl = data[key].imageUrl;
+      dogBreeds.push(dog);
+    }
+
+    return dogBreeds;
+  }
 
 }

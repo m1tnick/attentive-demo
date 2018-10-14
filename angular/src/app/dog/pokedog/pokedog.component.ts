@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokeDogerService } from './services/pokedoger.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { DogerVM } from './model/DogerVM';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'pokedog',
@@ -11,15 +12,14 @@ import { DogerVM } from './model/DogerVM';
 export class PokeDogComponent implements OnInit {
 
   randomDoger$: Observable<DogerVM>;
+  catchedDogers: DogerVM[];
   private loadingImg = new BehaviorSubject<boolean>(false);
   public loading$ = this.loadingImg.asObservable();
 
   constructor(private pokeDogerService : PokeDogerService) { }
 
   ngOnInit() {
-      this.pokeDogerService.readAllDoger().subscribe(response => {
-          console.log(response);
-      })
+      this.readCatchedDogs();
   }
 
   onFindDoger() {
@@ -27,7 +27,20 @@ export class PokeDogComponent implements OnInit {
   }
   
   onCatchingDoger(doger: DogerVM) {
-      this.pokeDogerService.catchDoger(doger).subscribe();
+      this.pokeDogerService.catchDoger(doger).pipe(take(1)).subscribe(data => this.readCatchedDogs());
   }
 
+  readCatchedDogs() {
+    this.pokeDogerService.readAllDoger().pipe(take(1)).
+    subscribe(data => this.catchedDogers = data);
+  }
+
+  onUpdateDoger(doger: DogerVM) {
+      this.pokeDogerService.updateDoger(doger).subscribe(data => this.readCatchedDogs())
+  }
+
+  onDeleteDoger(id: number) {
+    this.pokeDogerService.deleteDoger(id).subscribe(data => this.readCatchedDogs())
+
+  }
 }

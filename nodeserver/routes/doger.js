@@ -21,12 +21,16 @@ function Doger() {
     dogerInterface.readAllDogers(res);
  })
 
-//  firebase.database().ref('users/' + 1).set({
-//     username: 'test',
-//     email: 'test@ema.a',
-//     profile_picture : 'blba'
-//   }); 
-//  
+ router.put('/:id', (req, res) => {
+  var id = req.params.id;
+  dogerInterface.updateDoger(id, req.body);
+  res.send(req.body);
+})
+
+router.delete('/:id', (req, res) => {
+  dogerInterface.deleteDoger(req.params.id);
+  res.sendStatus(202);
+})  
 
 router.get('/random', (req, res) => {
     request({

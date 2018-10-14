@@ -1,2 +1,5 @@
 <catch-dog (searchDoger)="onFindDoger()" (catchingDoger)="onCatchingDoger($event)"
     [foundDoger]="randomDoger$ | async"></catch-dog>
+<catched-dogers [catchedDogers]="catchedDogers" 
+(deleteDoger)="onDeleteDoger($event)"
+(updateDoger)="onUpdateDoger($event)"></catched-dogers>

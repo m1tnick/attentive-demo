@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CatchDogComponent } from './catch-dog.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('CatchDogComponent', () => {
   let component: CatchDogComponent;
@@ -8,7 +9,10 @@ describe('CatchDogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CatchDogComponent ]
+      imports: [SharedModule],
+      declarations: [ 
+        CatchDogComponent
+       ]
     })
     .compileComponents();
   }));

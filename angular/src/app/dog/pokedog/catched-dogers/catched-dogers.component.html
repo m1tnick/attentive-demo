@@ -1,0 +1,24 @@
+<group-viewer title="Catched Dogers">
+  <div class="full-screen" *ngIf="catchedDogers && catchedDogers.length > 0; else noDogers">
+      <div class="main">
+        <div class="left">
+            <button mat-button *ngFor="let doger of catchedDogers" (click)="selectDoger(doger)">
+              {{doger.breed}} - {{doger.name ? doger.name : 'No name given'}}
+            </button>
+        </div>
+        <div class="middle" *ngIf="selectedDoger === null; else showDogger">
+          Select a doger on the left menu!
+        </div>
+        <ng-template #showDogger>
+            <div class="middle">
+                <doger-details [doger]="selectedDoger" 
+                (deleteDoger)="throwDeleteDoger($event)"
+                (updateDoger)="throwUpdateDoger($event)"></doger-details>
+            </div> 
+        </ng-template>
+      </div>
+ </div>
+    <ng-template #noDogers>
+        No Dogers were catched!
+    </ng-template>
+  </group-viewer>
