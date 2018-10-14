@@ -5,6 +5,7 @@ import { DogComponent } from './dog.component';
 import { DogRoutingModule } from './dog-routing.module';
 import { DogListModule } from './dog-list/dog-list.module';
 import { CoreModule } from '../core/core.module';
+import { PokeDogModule } from './pokedog/pokedog.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { CoreModule } from '../core/core.module';
     CoreModule,
     SharedModule,
     DogRoutingModule,
-    DogListModule
+    DogListModule,
+    PokeDogModule
   ],
   providers:[DogsService],
   declarations: [DogComponent],

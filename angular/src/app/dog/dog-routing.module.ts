@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DogComponent } from './dog.component';
 import { DogListComponent } from './dog-list/dog-list.component';
+import { PokeDogComponent } from './pokedog/pokedog.component';
 
 
 const dogRoutes: Routes = [
@@ -13,6 +14,10 @@ const dogRoutes: Routes = [
 			{
 				path: 'dogsList',
 				component: DogListComponent,
+			},
+			{
+				path: 'pokeDog',
+				component: PokeDogComponent,
 			}
 		]
 	}

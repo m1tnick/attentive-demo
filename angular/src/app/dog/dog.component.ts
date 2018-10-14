@@ -14,7 +14,7 @@ export class DogComponent implements OnInit {
 	ngOnInit() {
         this.items = [
             { label: 'DogList', routerLink: '/dogs/dogsList' },
-           // { label: 'PokeDog', routerLink: '/dog/pokeDog' }
+            { label: 'PokeDoger', routerLink: '/dogs/pokeDog' }
         ];
 	}
 }

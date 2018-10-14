@@ -26,11 +26,11 @@ export class ErrorsModule {
 					provide: ErrorHandler,
 					useClass: ErrorsHandler
 				},
-				{
-					provide: HTTP_INTERCEPTORS,
-					useClass: HttpRequestInterceptor,
-					multi: true
-				}
+				// {
+				// 	provide: HTTP_INTERCEPTORS,
+				// 	useClass: HttpRequestInterceptor,
+				// 	multi: true
+				// }
 			]
 		};
 	}

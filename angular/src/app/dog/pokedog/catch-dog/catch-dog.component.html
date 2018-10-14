@@ -1,0 +1,20 @@
+<group-viewer title="Doge Catcher" class="centered-elements">
+    <div class="centered-elements">
+        <button mat-raised-button color="primary" (click)="findDoger()">
+            <span>Find a doge</span>
+        </button>
+    </div>
+    <div *ngIf="foundDoger" class="centered-elements">
+            <div class="top-space" *ngIf="loadingImg">
+                <mat-spinner [diameter]="48"></mat-spinner>
+            </div>
+            <div [ngClass]="(loadingImg) ? 'hideImg': ''" class="container">
+                <img [src]="foundDoger.imageUrl" height="300" width="300" (load)="onImgLoaded()">
+            </div> 
+        </div> 
+        <div *ngIf="foundDoger" class="centered-elements">
+            <button mat-raised-button color="warn" (click)="catchDoger()">
+                    <span>Catch the doge!</span>
+                </button>
+            </div>           
+  </group-viewer>

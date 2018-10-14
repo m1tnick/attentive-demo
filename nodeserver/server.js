@@ -15,18 +15,8 @@ var express = require('express'),
     messagingSenderId: "136969893952"
   };
   firebase.initializeApp(config);
-
-  // Get a reference to the database service
-  var database = firebase.database();
-
-
-    // firebase.database().ref('users/' + 1).set({
-    //   username: 'test',
-    //   email: 'test@ema.a',
-    //   profile_picture : 'blba'
-    // });
   
-
+    app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Allow cors
@@ -39,10 +29,13 @@ app.use(cors(corsOptions));
 
 
 var dogRoutes = require("./routes/dog"),
+    dogerRoutes = require("./routes/doger"),
     catRoutes = require("./routes/cat");
 
 app.use('/dogs', dogRoutes);
 app.use('/cats', catRoutes);
+app.use('/doger', dogerRoutes);
+
 
 
 app.listen(8000, () => {
