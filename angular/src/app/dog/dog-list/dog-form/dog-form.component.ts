@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { DogBreedVM } from '../model/DogBreedVM';
+import { DogBreedVM } from '../../model/DogBreedVM';
 
 @Component({
   selector: 'dog-form',

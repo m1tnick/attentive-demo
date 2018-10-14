@@ -1,29 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { DogsService } from './services/dogs.service';
-import { DogBreedVM } from './model/DogBreedVM';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { MenuItem } from '../shared/model/MenuItem';
+
 
 @Component({
-  selector: 'app-dog',
-  templateUrl: './dog.component.html',
-  styleUrls: ['./dog.component.css']
+	selector: 'att-dog',
+	templateUrl: './dog.component.html'
 })
 export class DogComponent implements OnInit {
+	items: MenuItem[];
 
-  dogBreeds$: Observable<DogBreedVM[]>;
-  imageURL$: Observable<URL>;
-  breedName: string;
+	constructor() {}
 
-  constructor(private dogsService: DogsService) { }
-
-  ngOnInit() {
-    this.dogBreeds$ = this.dogsService.getDogBreeds();
-  }
-
-  onBreedSelected(event: string) {
-    this.breedName = event;
-    this.imageURL$ = this.dogsService.getBreedImage(event);
-  }
-
+	ngOnInit() {
+        this.items = [
+            { label: 'DogList', routerLink: '/dogs/dogsList' },
+           // { label: 'PokeDog', routerLink: '/dog/pokeDog' }
+        ];
+	}
 }

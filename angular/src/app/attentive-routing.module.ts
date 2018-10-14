@@ -11,12 +11,11 @@ const attentiveRoutes: Routes = [
 	},
 	{
 		path: 'dogs',
-		component: DogComponent
+		loadChildren: './dog/dog.module#DogModule'
 	},
 	{
 		path: 'cats',
 		component: CatComponent
-		//loadChildren: './cat/cat.module#CatModule'
 	},
 	{
 		path: '**',

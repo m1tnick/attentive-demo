@@ -9,18 +9,18 @@ import { AttentiveRoutingModule } from './attentive-routing.module';
 import { DogModule } from './dog/dog.module';
 import { CatModule } from './cat/cat.module';
 import { ErrorsModule } from './shared/errors/errors.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AttentiveComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
     AttentiveRoutingModule,
     SharedModule,
-    DogModule,
     CatModule,
     ErrorsModule.forRoot(),
   ],

@@ -1,0 +1,14 @@
+  <group-viewer title="Dog Breeds List">
+    <div class="container">
+        <dog-form [dogBreeds]= "dogBreeds$ | async"
+        (breedSelected)="onBreedSelected($event)"></dog-form>
+        <dog-image class="image-box" [imageUrl]= "imageURL$ | async" [breedName]="breedName"></dog-image>      
+    </div>
+  </group-viewer>
+
+  <!-- <lib-ep-sub-menu class="sub-menu" [items]="items"></lib-ep-sub-menu>
+<div class="epso-main-content" fxLayout="row">
+    <div fxFlexOffset="5" fxFlex="90">
+        <router-outlet></router-outlet>
+    </div>
+</div> -->

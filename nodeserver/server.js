@@ -1,7 +1,31 @@
 var express = require('express'),
       app = express(),
       bodyParser = require("body-parser"),
-      cors = require("cors");
+      cors = require("cors"),
+      firebase = require("firebase");
+
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBcgWmnNu49kOhHM0qH3K7ekb6Tag6BLBY",
+    authDomain: "attentive-demo.firebaseapp.com",
+    databaseURL: "https://attentive-demo.firebaseio.com",
+    projectId: "attentive-demo",
+    storageBucket: "attentive-demo.appspot.com",
+    messagingSenderId: "136969893952"
+  };
+  firebase.initializeApp(config);
+
+  // Get a reference to the database service
+  var database = firebase.database();
+
+
+    // firebase.database().ref('users/' + 1).set({
+    //   username: 'test',
+    //   email: 'test@ema.a',
+    //   profile_picture : 'blba'
+    // });
+  
 
 app.use(bodyParser.urlencoded({extended: true}));
 

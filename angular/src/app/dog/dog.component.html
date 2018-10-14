@@ -1,7 +1,4 @@
-  <group-viewer title="Dog Breeds List">
-    <div class="container">
-        <dog-form [dogBreeds]= "dogBreeds$ | async"
-        (breedSelected)="onBreedSelected($event)"></dog-form>
-        <dog-image class="image-box" [imageUrl]= "imageURL$ | async" [breedName]="breedName"></dog-image>      
-    </div>
-  </group-viewer>
+<sub-menu [items]="items"></sub-menu>
+<div>
+    <router-outlet></router-outlet>
+</div>

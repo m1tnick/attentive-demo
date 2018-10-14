@@ -1,18 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockComponent } from 'ng2-mock-component';
 
-import { DogComponent } from './dog.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DogListComponent } from './dog-list.component';
 
-describe('DogComponent', () => {
-  let component: DogComponent;
-  let fixture: ComponentFixture<DogComponent>;
+describe('DogListComponent', () => {
+  let component: DogListComponent;
+  let fixture: ComponentFixture<DogListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       declarations: [ 
-        DogComponent,
+        DogListComponent,
         MockComponent({
 					selector: 'group-viewer'
 				}),
@@ -30,7 +30,7 @@ describe('DogComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DogComponent);
+    fixture = TestBed.createComponent(DogListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
